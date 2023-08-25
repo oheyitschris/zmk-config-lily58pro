@@ -77,17 +77,17 @@
 
 		raise_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |        |           |           |           |           |           |                           |           |           |           |           |           |           |
-// |   `    |     1     |     2     |     3     |     4     |     5     |                           |     6     |     7     |     8     |     9     |     0     |    DEL    |
-// |   F1   |    F2     |    F3     |    F4     |    F5     |    F6     |                           |           |    <-     |     ^     |     v     |    ->     |           |
-// |   F7   |    F8     |    F9     |    F10    |    F11    |    F12    |           |   |           |     +     |     -     |     =     |    "["    |    "]"    |     \     |
+// |  LGUI  |    F1     |    F2     |    F3     |    F4     |    F5     |                           |    F6     |    F7     |    F8     |    F9     |    F10    |           |
+// |        |           |           |           |           |           |                           |     6     |     7     |     8     |     9     |     0     |    DEL    |
+// |        |           |           |           |           |           |                           |           |    <-     |     ^     |     v     |    ->     |           |
+// |        |           |           |           |           |           |    F11    |   |    F12    |     +     |     -     |     =     |    "["    |    "]"    |     \     |
 //                                  |           |           |   LOWER   |           |   |           |           |   RAISE   |           |
 			bindings = <
-&trans      &trans      &trans      &trans      &trans      &trans                                  &trans      &trans      &trans      &trans      &trans      &trans
-&kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp DEL
-&kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6                                  &trans      &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans
-&kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12     &trans          &trans      &kp KP_PLUS &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
-                                    &trans      &trans      &mo 1       &trans          &trans      &trans      &mo 2       &trans
+&kp LGUI     &kp F1       &kp F2      &kp F3      &kp F4      &kp F5                                  &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &trans
+&trans       &trans       &trans      &trans      &trans      &trans                                  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp DEL
+&trans       &trans       &trans      &trans      &trans      &trans                                  &trans      &kp LEFT    &kp UP      &kp DOWN    &kp RIGHT   &trans
+&trans       &trans       &trans      &trans      &trans      &trans      &kp F11         &kp F12     &kp KP_PLUS &kp MINUS   &kp EQUAL   &kp LBKT    &kp RBKT    &kp BSLH
+                        	      &trans      &trans      &mo 1       &trans          &trans      &trans      &mo 2       &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -95,17 +95,17 @@
 		
 		super_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |   LGUI     |                   |                   |                   |                   |                   |                           |                   |                   |                   |                   |                   |                   |
-// |            |                   |                   |                   |                   |                   |                           |                   |                   |                   |                   |                   |                   |
-// |   BTCLR    |        BT1        |        BT2        |        BT3        |        BT4        |        BT5        |                           |                   |                   |                   |                   |                   |                   |
-// |            |       EP_ON       |       EP_OFF      |      EP_TOG       |                   |                   |           |   |           |                   |                   |                   |                   |                   |                   |
-//                                                      |                   |                   |       LOWER       |           |   |           |                   |       RAISE       |                   |
+// |  LGUI    |             |             |             |             |             |                           |             |             |             |             |             |             |
+// |          |             |             |             |             |             |                           |             |             |             |             |             |             |
+// |  BTCLR   |     BT1     |     BT2     |     BT3     |     BT4     |     BT5     |                           |             |             |             |             |             |             |
+// |          |             |             |             |             |             |           |   |           |             |             |             |             |             |             |
+//                                                      |             |             |   LOWER   |   |           |             |    RAISE    |             |
 			bindings = <
-&kp LGUI        &trans              &trans              &trans              &trans              &trans                                          &trans              &trans              &trans              &trans              &trans              &trans
-&trans          &trans              &trans 	        &trans              &trans              &trans                                          &trans              &trans              &trans              &trans              &trans              &trans
-&bt BT_CLR      &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4                                    &trans              &trans              &trans              &trans              &trans              &trans
-&trans          &ext_power EP_ON    &ext_power EP_OFF   &ext_power EP_TOG   &trans              &trans              &trans          &trans      &trans              &trans              &trans              &trans              &trans              &trans
-                                                        &trans              &trans              &mo 1               &trans          &trans      &trans              &mo 2               &trans
+&kp LGUI       &trans         &trans        &trans        &trans        &trans                                    &trans	&trans	      &trans        &trans        &trans        &trans
+&trans         &trans         &trans 	    &trans        &trans        &trans                                    &trans	&trans        &trans        &trans        &trans        &trans
+&bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &trans	&trans        &trans        &trans        &trans        &trans
+&trans         &trans	      &trans	    &trans	  &trans        &trans        &trans          &trans      &trans	&trans        &trans        &trans        &trans        &trans
+                                                          &trans        &trans        &mo 1           &trans      &trans	&trans        &mo 2         &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
